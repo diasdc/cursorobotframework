@@ -5,7 +5,9 @@ Resource             package.robot
 
 *** Keywords ***
 Abrir navegador
-    Open Browser            about:blank        chrome
+    Open Browser            about:blank         chrome    options=add_experimental_option('excludeSwitches', ['enable-logging'])
+
+    Maximize Browser Window
     Go To                   https://automacaocombatista.herokuapp.com/users
     Maximize Browser Window
     Set Selenium Timeout    20

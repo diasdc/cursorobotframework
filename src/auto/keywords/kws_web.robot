@@ -49,6 +49,7 @@ E clique na opção NOVO USUÁRIO
    Click Element    xpath=//*[contains(text(), 'Novo Usuário')]
 
 Quando finalizar o cadastro preenchendo todos os campos
+    Sleep    3
     Input Text    id=user_name            ${NOVO_USUARIO.nome}
     Input Text    id=user_lastname        ${NOVO_USUARIO.ult_nome}
     Input Text    id=user_email           ${NOVO_USUARIO.email}
@@ -59,7 +60,7 @@ Quando finalizar o cadastro preenchendo todos os campos
     Input Text    id=user_age             ${NOVO_USUARIO.idade}
     Click Element    xpath=//input[@value='Criar']
 
-Então deve ser apresentada a mensagem "Usuário criado com sucesso"
+Então deverá ser apresentada a mensagem "Usuário criado com sucesso"
     Wait Until Element Is Visible        xpath=//*[contains(text(), 'Usuário Criado com sucesso')]
 
     Wait Until Page Contains    ${NOVO_USUARIO.nome}
